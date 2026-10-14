@@ -1,0 +1,22 @@
+# dependencies
+node_modules/
+
+# build output
+_site/
+.11ty-vite/
+dist/
+
+# env and secrets (Neocities API key, etc.)
+.env
+.env.*
+
+# logs
+*.log
+npm-debug.log*
+
+# OS and editor junk
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/

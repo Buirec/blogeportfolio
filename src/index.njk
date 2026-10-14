@@ -1,0 +1,29 @@
+---
+layout: base.njk
+title: Home
+---
+
+<section class="mb-10">
+  <h2 class="mb-2 text-lg font-bold">welcome!</h2>
+  <p>
+    hi, this is my little corner of the web. i write about games,
+    projects, and whatever else is on my mind. pull up a chair.
+  </p>
+</section>
+
+<section>
+  <h2 class="mb-3 text-lg font-bold">recent posts</h2>
+  <ul class="space-y-2">
+    {% for post in collections.posts | reverse %}
+      {% if loop.index <= 5 %}
+        <li class="flex gap-3">
+          <time class="shrink-0 text-stone-500" datetime="{{ post.date | isoDate }}">
+            {{ post.date | isoDate }}
+          </time>
+          <a class="underline hover:text-red-600" href="{{ post.url }}">{{ post.data.title }}</a>
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+  <p class="mt-4 text-sm"><a class="underline" href="/archive/">all posts &rarr;</a></p>
+</section>

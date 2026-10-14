@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title }} | Cerbloge</title>
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body class="bg-lavender min-h-screen p-3 sm:p-10">
+
+  <div class="win-window mx-auto max-w-2xl">
+
+    <div class="win-titlebar">
+      <span>Cerbloge - {{ title }}</span>
+      <span aria-hidden="true">
+        <span class="win-btn">_</span><span class="win-btn">&#9633;</span><span class="win-btn">&#10005;</span>
+      </span>
+    </div>
+
+    <nav class="win-menubar">
+      <a href="/">Home</a>
+      <a href="/archive/">Archive</a>
+      <a href="/about/">About</a>
+      <a href="/feed.xml">RSS</a>
+    </nav>
+
+    <div class="win-inset m-0.5 p-5 leading-relaxed">
+      <p class="mb-6 text-xs text-stone-500">welcome to the bone zone
+      </p>
+      <main>
+        {{ content | safe }}
+      </main>
+    </div>
+
+    <div class="win-status m-0.5 mt-1">
+      &copy; {{ page.date.getFullYear() }} cerbloge. made with eleventy.
+    </div>
+
+  </div>
+
+  <script type="module" src="/js/main.js"></script>
+</body>
+</html>
