@@ -1,0 +1,23 @@
+---
+layout: base.njk
+title: Manga
+---
+
+<h2 class="mb-2 text-lg font-bold">manga</h2>
+<p class="mb-6">
+  Archive for Yearly Shonen Jump, as well as my thoughts about the state of the industry
+</p>
+
+<h3 class="mb-3 font-bold">manga posts</h3>
+{% if collections.manga.length %}
+  <ul class="space-y-2">
+    {% for post in collections.manga | reverse %}
+      <li class="flex gap-3">
+        <time class="shrink-0 text-stone-500" datetime="{{ post.date | isoDate }}">{{ post.date | isoDate }}</time>
+        <a class="underline hover:text-red-600" href="{{ post.url }}">{{ post.data.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p class="text-stone-500">nothing here yet.</p>
+{% endif %}

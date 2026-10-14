@@ -1,0 +1,23 @@
+---
+layout: base.njk
+title: Games
+---
+
+<h2 class="mb-2 text-lg font-bold">games</h2>
+<p class="mb-6">
+  Where I jerk off about The World Ends With You
+</p>
+
+<h3 class="mb-3 font-bold">game posts</h3>
+{% if collections.games.length %}
+  <ul class="space-y-2">
+    {% for post in collections.games | reverse %}
+      <li class="flex gap-3">
+        <time class="shrink-0 text-stone-500" datetime="{{ post.date | isoDate }}">{{ post.date | isoDate }}</time>
+        <a class="underline hover:text-red-600" href="{{ post.url }}">{{ post.data.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p class="text-stone-500">nothing here yet.</p>
+{% endif %}
